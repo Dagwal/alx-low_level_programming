@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * _memcpy - iron out
- * @dest: pointer to char
- * @src: pointer to char
- * @n: size of pointers
- * Return: *dest ing
+ * _memcpy - irontnoux
+ * @dest: pointer to char params
+ * @src: pointer to char params
+ * @n: size
+ * Return: *dest
  */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
