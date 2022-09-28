@@ -36,10 +36,10 @@ int p1(char *s, int l)
 }
 
 /**
-*is_palindrome - palindrome
-*@s: pointer to string
-*Return: recursion
-*/
+ *is_palindrome - palindrome
+ *@s: pointer to string
+ *Return: recursion
+ */
 
 int is_palindrome(char *s)
 {
