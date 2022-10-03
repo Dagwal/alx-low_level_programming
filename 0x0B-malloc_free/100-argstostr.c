@@ -5,44 +5,40 @@
  *             arguments are separated by a new line in the string.
  * @ac: The number of arguments passed to the program.
  * @av: An array of pointers to the arguments.
+ *
  * Return: If ac == 0, av == NULL, or the function fails - NULL.
+ *         Otherwise - a pointer to the new string.
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j, k, size;
-	char *arg;
-	
-	size = 0;
-	k = 0;
+	char *str;
+	int arg, byte, index, size = ac;
+
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	i = 0;
-	while (i < ac)
+
+	for (arg = 0; arg < ac; arg++)
 	{
-		j = 0;
-		while (av[i][j])
-		{
+		for (byte = 0; av[arg][byte]; byte++)
 			size++;
-			j++;
-		}
-		size++;
-		i++;
 	}
-	arg = malloc((sizeof(char) * size) + 1);
-	if (arg == NULL)
+
+	str = malloc(sizeof(char) * size + 1);
+
+	if (str == NULL)
 		return (NULL);
-	i = 0;
-	while (i < ac)
+
+	index = 0;
+
+	for (arg = 0; arg < ac; arg++)
 	{
-		j = 0;
-		while (av[i][j]);
-		j++:
-		k++;
+		for (byte = 0; av[arg][byte]; byte++)
+			str[index++] = av[arg][byte];
+
+		str[index++] = '\n';
 	}
-	arg[k] = '\n';
-	k++;
-	i++;
-}
-arg[k] = '\0';
-return (arg);
+
+	str[size] = '\0';
+
+	return (str);
 }
